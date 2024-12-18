@@ -8,6 +8,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final email = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,10 +22,15 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Image.asset('assets/images/logo.jpg'),
             ),
             // SizedBox(height: 120.h),
+            const SizedBox(height: 120,),
             Container(
               // height: 44.h,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: Colors.white,
+                // borderRadius: BorderRadius.circular(5.r),
+              ),
+              child: TextField(
+                style: TextStyle(fontSize: 18, color: Colors.black),
               ),
             ),
           ],
