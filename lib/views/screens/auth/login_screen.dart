@@ -37,6 +37,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 decoration: const InputDecoration(
                   labelText: 'Email',
                   hintText: 'Enter email...',
+                  prefixIcon: Icon(Icons.email),
+                  // contentPadding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
+                  enabledBorder: OutlineInputBorder(),
                 ),
               ),
             ),
