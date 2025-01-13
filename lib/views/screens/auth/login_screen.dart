@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -25,21 +26,28 @@ class _LoginScreenState extends State<LoginScreen> {
             // SizedBox(height: 120.h),
             const SizedBox(height: 120,),
             Container(
-              // height: 44.h,
-              decoration: const BoxDecoration(
+              height: 44.h,
+              decoration: BoxDecoration(
                 color: Colors.white,
-                // borderRadius: BorderRadius.circular(5.r),
+                borderRadius: BorderRadius.circular(5.r),
               ),
               child: TextField(
                 controller: email,
                 focusNode: email_F,
                 style: const TextStyle(fontSize: 18, color: Colors.black),
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                   labelText: 'Email',
                   hintText: 'Enter email...',
-                  prefixIcon: Icon(Icons.email),
-                  // contentPadding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
-                  enabledBorder: OutlineInputBorder(),
+                  prefixIcon: const Icon(Icons.email),
+                  contentPadding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5.r),
+                    borderSide: BorderSide(color: Colors.black, width: 2.w),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5.r),
+                    borderSide: BorderSide(color: Colors.black, width: 2.w),
+                  ),
                 ),
               ),
             ),
