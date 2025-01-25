@@ -31,29 +31,58 @@ class _LoginScreenState extends State<LoginScreen> {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(5.r),
               ),
-              child: TextField(
-                controller: email,
-                focusNode: email_F,
-                style: const TextStyle(fontSize: 18, color: Colors.black),
-                decoration: InputDecoration(
-                  labelText: 'Email',
-                  hintText: 'Enter email...',
-                  prefixIcon: const Icon(Icons.email),
-                  contentPadding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(5.r),
-                    borderSide: BorderSide(color: Colors.black, width: 2.w),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(5.r),
-                    borderSide: BorderSide(color: Colors.black, width: 2.w),
-                  ),
-                ),
-              ),
+              // child: Padding(
+              //   padding: EdgeInsets.symmetric(horizontal: 10.w),
+              //   child: TextField(
+              //     controller: email,
+              //     focusNode: email_F,
+              //     style: TextStyle(fontSize: 18.sp, color: Colors.black),
+              //     decoration: InputDecoration(
+              //       labelText: 'Email',
+              //       hintText: 'Enter email...',
+              //       prefixIcon: const Icon(Icons.email),
+              //       contentPadding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
+              //       enabledBorder: OutlineInputBorder(
+              //         borderRadius: BorderRadius.circular(5.r),
+              //         borderSide: BorderSide(color: Colors.black, width: 2.w),
+              //       ),
+              //       focusedBorder: OutlineInputBorder(
+              //         borderRadius: BorderRadius.circular(5.r),
+              //         borderSide: BorderSide(color: Colors.black, width: 2.w),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+              child: textField(),
             ),
           ],
         ),
       ),
+    );
+  }
+
+  Widget textField(TextEditingController controller, IconData icon, String type, FocusNode focusNode) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10.w),
+      child: TextField(
+                  controller: email,
+                  focusNode: email_F,
+                  style: TextStyle(fontSize: 18.sp, color: Colors.black),
+                  decoration: InputDecoration(
+                    labelText: 'Email',
+                    hintText: type,
+                    prefixIcon: Icon(icon, color: focusNode.hasFocus ? Colors.black: Colors.grey,),
+                    contentPadding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5.r),
+                      borderSide: BorderSide(color: Colors.black, width: 2.w),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(5.r),
+                      borderSide: BorderSide(color: Colors.black, width: 2.w),
+                    ),
+                  ),
+                ),
     );
   }
 }
