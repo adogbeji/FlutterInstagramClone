@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
               //     ),
               //   ),
               // ),
-              child: textField(),
+              child: textField(email, Icons.email, 'Email', email_F),
             ),
           ],
         ),
@@ -66,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
       padding: EdgeInsets.symmetric(horizontal: 10.w),
       child: TextField(
                   controller: email,
-                  focusNode: email_F,
+                  focusNode: focusNode,
                   style: TextStyle(fontSize: 18.sp, color: Colors.black),
                   decoration: InputDecoration(
                     labelText: 'Email',
