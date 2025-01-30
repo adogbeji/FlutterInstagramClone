@@ -11,6 +11,8 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final email = TextEditingController();
   FocusNode email_F = FocusNode();
+  final password = TextEditingController();
+  FocusNode password_F = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -25,36 +27,17 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             // SizedBox(height: 120.h),
             const SizedBox(height: 120,),
-            Container(
-              height: 44.h,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(5.r),
-              ),
-              // child: Padding(
-              //   padding: EdgeInsets.symmetric(horizontal: 10.w),
-              //   child: TextField(
-              //     controller: email,
-              //     focusNode: email_F,
-              //     style: TextStyle(fontSize: 18.sp, color: Colors.black),
-              //     decoration: InputDecoration(
-              //       labelText: 'Email',
-              //       hintText: 'Enter email...',
-              //       prefixIcon: const Icon(Icons.email),
-              //       contentPadding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
-              //       enabledBorder: OutlineInputBorder(
-              //         borderRadius: BorderRadius.circular(5.r),
-              //         borderSide: BorderSide(color: Colors.black, width: 2.w),
-              //       ),
-              //       focusedBorder: OutlineInputBorder(
-              //         borderRadius: BorderRadius.circular(5.r),
-              //         borderSide: BorderSide(color: Colors.black, width: 2.w),
-              //       ),
-              //     ),
-              //   ),
-              // ),
-              child: textField(email, Icons.email, 'Email', email_F),
-            ),
+            // Container(
+            //   height: 44.h,
+            //   decoration: BoxDecoration(
+            //     color: Colors.white,
+            //     borderRadius: BorderRadius.circular(5.r),
+            //   ),
+            //   child: textField(email, Icons.email, 'Email', email_F),
+            // ),
+            textField(email, Icons.email, 'Email', email_F),
+            SizedBox(height: 15.h,),
+            textField(password, Icons.lock, 'Password', password_F),
           ],
         ),
       ),
@@ -64,6 +47,12 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget textField(TextEditingController controller, IconData icon, String type, FocusNode focusNode) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10.w),
+      child: Container(
+              height: 44.h,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(5.r),
+              ),
       child: TextField(
                   controller: email,
                   focusNode: focusNode,
@@ -83,6 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
+      ),
     );
   }
 }
