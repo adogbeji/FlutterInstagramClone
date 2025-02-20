@@ -25,8 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Center(
               child: Image.asset('assets/images/logo.jpg'),
             ),
-            // SizedBox(height: 120.h),
-            const SizedBox(height: 120,),
+            SizedBox(height: 120.h),
             // Container(
             //   height: 44.h,
             //   decoration: BoxDecoration(
@@ -38,40 +37,70 @@ class _LoginScreenState extends State<LoginScreen> {
             textField(email, Icons.email, 'Email', email_F),
             SizedBox(height: 15.h,),
             textField(password, Icons.lock, 'Password', password_F),
+            SizedBox(height: 10.h,),
+            Forgot(),
+            SizedBox(height: 10.h,),
+            Container(
+              width: double.infinity,
+              height: 44.h,
+              decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(10.r),
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 
-  Widget textField(TextEditingController controller, IconData icon, String type, FocusNode focusNode) {
+  Widget Forgot() {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10.w),
+      child: Text(
+        'Forgot your password?',
+        style: TextStyle(
+          fontSize: 13.sp,
+          color: Colors.blue,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+  }
+
+  Widget textField(TextEditingController controller, IconData icon, String type,
+      FocusNode focusNode) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10.w),
       child: Container(
-              height: 44.h,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(5.r),
-              ),
-      child: TextField(
-                  controller: email,
-                  focusNode: focusNode,
-                  style: TextStyle(fontSize: 18.sp, color: Colors.black),
-                  decoration: InputDecoration(
-                    labelText: 'Email',
-                    hintText: type,
-                    prefixIcon: Icon(icon, color: focusNode.hasFocus ? Colors.black: Colors.grey,),
-                    contentPadding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5.r),
-                      borderSide: BorderSide(color: Colors.black, width: 2.w),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5.r),
-                      borderSide: BorderSide(color: Colors.black, width: 2.w),
-                    ),
-                  ),
-                ),
+        height: 44.h,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(5.r),
+        ),
+        child: TextField(
+          controller: email,
+          focusNode: focusNode,
+          style: TextStyle(fontSize: 18.sp, color: Colors.black),
+          decoration: InputDecoration(
+            labelText: 'Email',
+            hintText: type,
+            prefixIcon: Icon(
+              icon,
+              color: focusNode.hasFocus ? Colors.black : Colors.grey,
+            ),
+            contentPadding:
+                EdgeInsets.symmetric(horizontal: 15.w, vertical: 15.h),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(5.r),
+              borderSide: BorderSide(color: Colors.black, width: 2.w),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(5.r),
+              borderSide: BorderSide(color: Colors.black, width: 2.w),
+            ),
+          ),
+        ),
       ),
     );
   }
