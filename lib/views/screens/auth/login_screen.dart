@@ -40,18 +40,33 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(height: 10.h,),
             Forgot(),
             SizedBox(height: 10.h,),
-            Container(
-              width: double.infinity,
-              height: 44.h,
-              decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(10.r),
-              ),
-            ),
+            Login(),
+            SizedBox(height: 10.h,),
+            const Text('Don\'t have an account?'),
           ],
         ),
       ),
     );
+  }
+
+  Widget Login() {
+    return Padding(
+    padding: EdgeInsets.symmetric(horizontal: 10.w),
+    child: Container(
+      alignment: Alignment.center,
+      width: double.infinity,
+      height: 44.h,
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.circular(10.r),
+      ),
+      child: Text('Log In', style: TextStyle(
+                fontSize: 23.sp,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),),
+    ),
+  );
   }
 
   Widget Forgot() {
