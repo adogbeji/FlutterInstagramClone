@@ -42,7 +42,18 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(height: 10.h,),
             Login(),
             SizedBox(height: 10.h,),
-            const Text('Don\'t have an account?'),
+            Row(
+              children: [
+                Text('Don\'t have an account?', style: TextStyle(
+              fontSize: 13.sp,
+              color: Colors.grey),),
+                Text('Sign Up', style: TextStyle(
+              fontSize: 15.sp,
+              color: Colors.blue,
+              fontWeight: FontWeight.bold,
+            ),),
+              ],
+            ),
           ],
         ),
       ),
@@ -60,11 +71,14 @@ class _LoginScreenState extends State<LoginScreen> {
         color: Colors.black,
         borderRadius: BorderRadius.circular(10.r),
       ),
-      child: Text('Log In', style: TextStyle(
-                fontSize: 23.sp,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),),
+      child: Text(
+        'Log In', 
+            style: TextStyle(
+              fontSize: 23.sp,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+      ),
     ),
   );
   }
