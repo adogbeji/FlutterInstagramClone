@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SignupScreen extends StatefulWidget {
-  const SignupScreen({super.key});
+  const SignupScreen(this.show, {super.key});
+
+  final VoidCallback show;
 
   @override
   State<SignupScreen> createState() => _SignupScreenState();
