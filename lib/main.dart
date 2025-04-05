@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:instagram_clone/views/screens/auth/auth_screen.dart';
 
 import 'package:instagram_clone/views/screens/auth/login_screen.dart';
 
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
       ),
       home: const ScreenUtilInit(
         designSize: Size(375, 812),
-        child: LoginScreen(),
+        // child: LoginScreen(),
+        child: AuthScreen(),
       ),
     );
   }

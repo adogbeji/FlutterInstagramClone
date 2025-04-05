@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+  const LoginScreen(this.show, {super.key});
+
+  final VoidCallback show;
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
