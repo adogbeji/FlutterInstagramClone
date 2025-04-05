@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -50,12 +51,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   'Don\'t have an account?',
                   style: TextStyle(fontSize: 13.sp, color: Colors.grey),
                 ),
-                Text(
-                  'Sign Up',
-                  style: TextStyle(
-                    fontSize: 15.sp,
-                    color: Colors.blue,
-                    fontWeight: FontWeight.bold,
+                GestureDetector(
+                  onTap: widget.show,
+                  child: Text(
+                    'Sign Up',
+                    style: TextStyle(
+                      fontSize: 15.sp,
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ],
