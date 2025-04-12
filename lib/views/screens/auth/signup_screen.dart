@@ -15,6 +15,12 @@ class _SignupScreenState extends State<SignupScreen> {
   FocusNode email_F = FocusNode();
   final password = TextEditingController();
   FocusNode password_F = FocusNode();
+  final bio = TextEditingController();
+  FocusNode bio_F = FocusNode();
+  final username = TextEditingController();
+  FocusNode username_F = FocusNode();
+  final passwordConfirm = TextEditingController();
+  FocusNode passwordConfirm_F = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -38,30 +44,46 @@ class _SignupScreenState extends State<SignupScreen> {
             // ),
             textField(email, Icons.email, 'Email', email_F),
             SizedBox(height: 15.h,),
+            textField(username, Icons.person, 'Username', username_F),
+            // SizedBox(height: 10.h,),
+            // Forgot(),
+            SizedBox(height: 15.h,),
+            textField(bio, Icons.abc, 'bio', bio_F),
+            SizedBox(height: 15.h,),
             textField(password, Icons.lock, 'Password', password_F),
-            SizedBox(height: 10.h,),
-            Forgot(),
+            SizedBox(height: 15.h,),
+            textField(passwordConfirm, Icons.lock, 'Confirm Password', passwordConfirm_F),
             SizedBox(height: 10.h,),
             Login(),
             SizedBox(height: 10.h,),
-            Row(
-              children: [
-                Text(
-                  'Don\'t have an account?',
-                  style: TextStyle(fontSize: 13.sp, color: Colors.grey),
-                ),
-                Text(
-                  'Sign Up',
-                  style: TextStyle(
-                    fontSize: 15.sp,
-                    color: Colors.blue,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
+            Have(),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget Have() {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 15.w),
+      child: Row(
+        children: [
+          Text(
+            'Don\'t have an account?',
+            style: TextStyle(fontSize: 13.sp, color: Colors.grey),
+          ),
+          GestureDetector(
+            onTap: widget.show,
+            child: Text(
+              'Sign Up',
+              style: TextStyle(
+                fontSize: 15.sp,
+                color: Colors.blue,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
