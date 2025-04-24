@@ -29,11 +29,15 @@ class _SignupScreenState extends State<SignupScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            // SizedBox(width: 96.w, height: 100.h,),
+            SizedBox(width: 96.w, height: 30.h,),
             Center(
               child: Image.asset('assets/images/logo.jpg'),
             ),
-            SizedBox(height: 120.h),
+            SizedBox(height: 20.h,),
+            Center(
+              child: CircleAvatar(radius: 32.r,),
+            ),
+            SizedBox(height: 50.h),
             // Container(
             //   height: 44.h,
             //   decoration: BoxDecoration(
@@ -53,7 +57,7 @@ class _SignupScreenState extends State<SignupScreen> {
             textField(password, Icons.lock, 'Password', password_F),
             SizedBox(height: 15.h,),
             textField(passwordConfirm, Icons.lock, 'Confirm Password', passwordConfirm_F),
-            SizedBox(height: 10.h,),
+            SizedBox(height: 20.h,),
             Login(),
             SizedBox(height: 10.h,),
             Have(),
