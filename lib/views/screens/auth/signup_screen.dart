@@ -33,9 +33,9 @@ class _SignupScreenState extends State<SignupScreen> {
             Center(
               child: Image.asset('assets/images/logo.jpg'),
             ),
-            SizedBox(height: 20.h,),
+            SizedBox(height: 60.h,),
             Center(
-              child: CircleAvatar(radius: 32.r,),
+              child: CircleAvatar(radius: 34.r, backgroundColor: Colors.grey.shade200, backgroundImage: const  AssetImage('assets/images/person.png'),),
             ),
             SizedBox(height: 50.h),
             // Container(
@@ -79,7 +79,7 @@ class _SignupScreenState extends State<SignupScreen> {
           GestureDetector(
             onTap: widget.show,
             child: Text(
-              'Sign Up',
+              'Log In',
               style: TextStyle(
                 fontSize: 15.sp,
                 color: Colors.blue,
@@ -104,7 +104,7 @@ class _SignupScreenState extends State<SignupScreen> {
           borderRadius: BorderRadius.circular(10.r),
         ),
         child: Text(
-          'Log In',
+          'Sign Up',
           style: TextStyle(
             fontSize: 23.sp,
             color: Colors.white,
